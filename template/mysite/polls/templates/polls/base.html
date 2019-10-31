@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .page-header{
+            padding:30px;
+            background-color: blueviolet;
+            text-align: center;
+        }
+        .qs{
+            list-style: none;
+            border: 2px solid #400040;
+            border-radius: 10px;
+        }
+        .qs li p{
+            padding-right: 200px;
+        }
+        .table tr td{
+            border: 1px solid #0735d1;
+            text-align: center;
+        }
+        .table{
+            border: 1px solid #0735d1;
+            width: 50%;
+            height: 50%;
+        }
+        .box{
+            display: flex;
+
+        }
+        .click{
+            font-size: 15px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>
+            {% if page %}
+                <p>Đây là Trang {{page}}</p>
+                <a class="click" href="http://127.0.0.1:8080/polls/list/">Click vào đây để đến trang Question</a>
+            {%else%}
+                Đây là Trang Questions
+            {%endif%}
+        </h1>
+        
+    </div>
+    <div class="index">
+        {% block indexContent %}
+        {% endblock%}
+    </div>
+    <div class="questionspage">
+  
+        {% block questionsContent %}
+        {% endblock %}
+    </div>
+</body>
+</html>

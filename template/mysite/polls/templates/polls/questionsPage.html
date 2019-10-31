@@ -1,0 +1,33 @@
+{% extends 'polls/base.html'%}
+
+{% block questionsContent%}
+
+<h1>Question</h1>
+{% for item in listquestion %}
+    {%if item != null %}
+    <ul class="qs">
+        <li><span>Question_name:</span>{{item.question_text}}</li>
+
+        <li><span>Time to ask questions:</span>{{item.pub_date}}</li>
+    </ul>
+    {%else%}
+        <p>không tìm thấy question</p>
+    {%endif %}
+{% endfor %}
+
+
+<h1>Choice</h1>
+{% for item in choice %}
+    {%if item != null %}
+    <ul class="qs">
+        <li><span>Chocei_text:</span>{{item.choice_text}}</li>
+        <li><span>votes:</span>{{item.votes}}</li>
+    </ul>
+    {%else%}
+        <p>không tìm thấy choice</p>
+    {%endif %}
+{% endfor %}
+
+{% endblock %}
+
+

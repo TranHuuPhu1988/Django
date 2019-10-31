@@ -1,0 +1,39 @@
+{% extends 'polls/base.html'%} {% block indexContent%}
+
+<div class="box">
+  <table class="table">
+    <tr>
+      <td>UserName</td>
+    </tr>
+    {% for item in User%}
+    <tr>
+      <td>{{ item }}</td>
+    </tr>
+    {%endfor%}
+  </table>
+
+  <table class="table">
+    <tr>
+      <td>Year of Birth</td>
+    </tr>
+    {% for item in ns%}
+    <tr>
+      <td>{{ item }}</td>
+    </tr>
+    {%endfor%}
+  </table>
+
+  <table class="table">
+    <tr>
+      <td>Address</td>
+    </tr>
+
+    {% for item in address%}
+    <tr>
+      <td>{{ item }}</td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+
+{% endblock %}
